@@ -35,7 +35,4 @@
   - 금액 입력
   - 메모 입력
 - 설정
-  - 언어 설정
-
-## 5. 데모 이미지
-![App Screenshot](![image](https://github.com/user-attachments/assets/7a50a2fb-8ef3-4402-8698-be7c04a4ff68))
+  - 언어 설정  
