@@ -37,6 +37,7 @@ class _LoginViewState extends State<LoginView> {
         _appPreferences.setIsUserLoggedIn();
         _appPreferences.setToken(token);
         resetAllModules();
+        Navigator.of(context).pop();
         Navigator.of(context).pushReplacementNamed(Routes.mainRoute);
       });
     });
@@ -184,9 +185,9 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   void dispose() {
-    _viewModel.dispose();
     _userNameController.dispose();
     _passwordController.dispose();
+    _viewModel.dispose();
     super.dispose();
   }
 }

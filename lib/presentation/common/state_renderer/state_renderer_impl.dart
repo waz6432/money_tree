@@ -92,8 +92,6 @@ extension FlowStateExtension on FlowState {
       case LoadingState:
         {
           if (getStateRendererType() == StateRendererType.POPUP_LOADING_STATE) {
-            _dismissDialog(context);
-
             // 팝업창 띄우기
             _showPopUp(
               context: context,
@@ -146,7 +144,7 @@ extension FlowStateExtension on FlowState {
           _showPopUp(
             context: context,
             title: AppStrings.success.tr(),
-            stateRendererType: StateRendererType.POPUP_SUCCESS,
+            stateRendererType: getStateRendererType(),
             message: getMessage(),
             resetStateFunction: resetStateFunction,
           );

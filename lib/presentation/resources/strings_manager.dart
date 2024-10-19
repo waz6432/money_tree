@@ -22,6 +22,7 @@ class AppStrings {
   static const String invalidPassword = "invalid_password";
   static const String forgotPassword = "forgot_password";
   static const String logIn = "log_in";
+  static const String loginPage = "login_page";
   static const String newUserSignUp = "new_user_sign_up";
   static const String loading = "loading";
   static const String retryAgain = "retry_again";
