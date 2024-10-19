@@ -1,16 +1,14 @@
-# financial_ledger
+# 👋 Money Tree 💼
+> 가계부 어플
 
-A new Flutter project.
 
-## Getting Started
+<br>
 
-This project is a starting point for a Flutter application.
+## 1. 제작 기간 & 참여 인원
+- 2024년 10월 ~ 진행중
 
-A few resources to get you started if this is your first Flutter project:
+<br>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 2. 사용 기술
+#### `Front-end`
+  - Flutter
