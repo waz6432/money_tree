@@ -38,4 +38,4 @@
   - 언어 설정
 
 ## 5. 데모 이미지
-![App Screenshot](![image](https://github.com/user-attachments/assets/7b202fc2-aa52-433f-af0c-2c6106a5cb0c))
+![App Screenshot](![image](https://github.com/user-attachments/assets/7a50a2fb-8ef3-4402-8698-be7c04a4ff68))
