@@ -1,16 +1,38 @@
-# financial_ledger
+# 👋 Money Tree 💰
+> 가계부 어플
 
-A new Flutter project.
 
-## Getting Started
+<br>
 
-This project is a starting point for a Flutter application.
+## 1. 제작 기간 & 참여 인원
+- 2024년 10월 ~ 진행중
 
-A few resources to get you started if this is your first Flutter project:
+<br>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 2. 사용 기술
+#### `Front-end`
+  - Flutter
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<br>
+
+## 3. ERD 설계
+
+
+<br>
+
+## 4. 핵심 기능
+
+- 메인
+  - 수입, 지출 확인
+  - 계좌 거래 내역 확인
+  - 최근 거래 내역 확인
+- 리포트
+  - 총 지출 변화율
+  - 카테고리별 지출 내역
+  - 데이터 시각화
+  - 리포트 내보내기
+- 지출 입력
+  - 금액 입력
+  - 메모 입력
+- 설정
+  - 언어 설정  
