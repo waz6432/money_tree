@@ -1,7 +1,7 @@
 import 'package:financial_ledger/presentation/main/home/home_page.dart';
 import 'package:financial_ledger/presentation/main/report_page.dart';
 import 'package:financial_ledger/presentation/main/settings_page.dart';
-import 'package:financial_ledger/presentation/main/transaction_page.dart';
+import 'package:financial_ledger/presentation/main/transaction/new_transaction_page.dart';
 import 'package:financial_ledger/presentation/resources/color_manager.dart';
 import 'package:financial_ledger/presentation/resources/strings_manager.dart';
 import 'package:financial_ledger/presentation/resources/values_manager.dart';
@@ -16,14 +16,14 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
-  List<Widget> pages = const [
+  List<Widget> pages = const <Widget>[
     HomePage(),
     ReportPage(),
-    TransactionPage(),
+    NewTransactionPage(),
     SettingsPage(),
   ];
 
-  List<String> titles = const [
+  List<String> titles = const <String>[
     AppStrings.home,
     AppStrings.report,
     AppStrings.transaction,

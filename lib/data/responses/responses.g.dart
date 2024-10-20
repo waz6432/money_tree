@@ -166,3 +166,27 @@ Map<String, dynamic> _$HomeResponseToJson(HomeResponse instance) =>
       'message': instance.message,
       'data': instance.data,
     };
+
+NewTransactionResponse _$NewTransactionResponseFromJson(
+        Map<String, dynamic> json) =>
+    NewTransactionResponse(
+      id: (json['id'] as num?)?.toInt(),
+      amount: (json['amount'] as num?)?.toInt(),
+      note: json['note'] as String?,
+      category: json['category'] as String?,
+      date: json['date'] as String?,
+    )
+      ..status = (json['status'] as num?)?.toInt()
+      ..message = json['message'] as String?;
+
+Map<String, dynamic> _$NewTransactionResponseToJson(
+        NewTransactionResponse instance) =>
+    <String, dynamic>{
+      'status': instance.status,
+      'message': instance.message,
+      'id': instance.id,
+      'amount': instance.amount,
+      'note': instance.note,
+      'category': instance.category,
+      'date': instance.date,
+    };

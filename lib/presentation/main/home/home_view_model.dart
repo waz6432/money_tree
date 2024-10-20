@@ -11,7 +11,7 @@ class HomeViewModel extends BaseViewModel implements HomeViewModelInputs, HomeVi
   // final StreamController _personalFinanceStreamController = BehaviorSubject<PersonalFinance>();
   // final StreamController _accountsStreamController = BehaviorSubject<List<Account>>();
   // final StreamController _recentTransactionsStreamController = BehaviorSubject<List<RecentTransaction>>();
-  final _datastreamController = BehaviorSubject<HomeViewObject>();
+  final BehaviorSubject _datastreamController = BehaviorSubject<HomeViewObject>();
 
   final HomeUseCase _homeUseCase;
   HomeViewModel(this._homeUseCase);

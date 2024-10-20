@@ -99,3 +99,15 @@ extension HomeResponseMapper on HomeResponse? {
     return HomeObject(data: data);
   }
 }
+
+extension NesTransactionResponseMapper on NewTransactionResponse? {
+  NewTransaction toDomain() {
+    return NewTransaction(
+      id: this?.id?.orZero() ?? ZERO,
+      amount: this?.amount?.orZero() ?? ZERO,
+      note: this?.note.orEmpty() ?? EMPTY,
+      category: this?.category?.orEmpty() ?? EMPTY,
+      date: this?.date.orEmpty() ?? EMPTY,
+    );
+  }
+}

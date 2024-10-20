@@ -144,7 +144,7 @@ class ResponseMessage {
   // local status code
   static const String DEFAULT_ERROR = AppStrings.defaultError; // 알 수 없는 에러 발생
   static const String CONNECT_TIMEOUT = AppStrings.connectTimeout; // 서버와 연결하는 데 시간이 초과됨
-  static const String CANCEL = AppStrings.cancel; // 요청이 취소됨
+  static const String CANCEL = AppStrings.cancelError; // 요청이 취소됨
   static const String RECEIVE_TIMEOUT = AppStrings.receiveTimeout; // 서버로부터 응답을 받는 데 시간이 초과됨
   static const String SEND_TIMEOUT = AppStrings.sendTimeout; // 서버로 요청을 보내는 데 시간이 초과됨
   static const String CACHE_ERROR = AppStrings.cacheError; // 캐시와 관련된 에러 발생

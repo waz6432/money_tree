@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
             return snapshot.data?.getScreenWidget(
                   context: context,
                   contentScreenWidget: _getContentWidget(),
-                  retryActionFunction: () => _viewModel.start(),
+                  retryActionFunction: _viewModel.start,
                   resetStateFunction: _viewModel.resetState,
                 ) ??
                 Container();

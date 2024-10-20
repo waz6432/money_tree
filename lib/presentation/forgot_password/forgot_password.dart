@@ -107,8 +107,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
   @override
   void dispose() {
-    _viewModel.dispose();
     _emailTextEditingController.dispose();
+    _viewModel.dispose();
     super.dispose();
   }
 }

@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 class SliderObject {
   String title;
   String subTitle;
@@ -74,4 +75,20 @@ class HomeObject {
   HomeData data;
 
   HomeObject({required this.data});
+}
+
+class NewTransaction {
+  int id;
+  int amount;
+  String note;
+  String category;
+  String date;
+
+  NewTransaction({
+    required this.id,
+    required this.amount,
+    required this.note,
+    required this.category,
+    required this.date,
+  });
 }

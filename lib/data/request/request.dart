@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 class LoginRequest {
   String email;
   String password;
@@ -22,5 +23,19 @@ class RegisterRequest {
     required this.password,
     required this.mobileNumber,
     required this.profilePicture,
+  });
+}
+
+class NewTransactionRequest {
+  int amount;
+  String note;
+  String category;
+  String date;
+
+  NewTransactionRequest({
+    required this.amount,
+    required this.note,
+    required this.category,
+    required this.date,
   });
 }

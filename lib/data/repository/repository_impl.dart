@@ -122,4 +122,28 @@ class RepositoryImpl extends Repository {
       }
     }
   }
+
+  @override
+  Future<Either<Failure, NewTransaction>> newTransaction(NewTransactionRequest newTransactionRequest) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response = await _remoteDataSource.newTransaction(newTransactionRequest);
+
+        if (response.status == ApiInternalStatus.SUCCESS) {
+          // return data (success)
+          return Right(response.toDomain());
+        } else {
+          return Left(Failure(
+            code: response.status ?? ApiInternalStatus.FAILURE,
+            message: response.message ?? ResponseMessage.DEFAULT_ERROR,
+          ));
+        }
+      } catch (exception) {
+        return Left(ErrorHandler.handle(exception).failure);
+      }
+    } else {
+      // connection error
+      return Left(DataSource.NO_INTERNET_CONNECTION.getFailure());
+    }
+  }
 }

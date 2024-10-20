@@ -27,6 +27,7 @@ class AppStrings {
   static const String loading = "loading";
   static const String retryAgain = "retry_again";
   static const String ok = "ok";
+  static const String cancel = "cancel";
   static const String emailHint = "email_hint";
   static const String invalidEmail = "invalid_email";
   static const String resetPassword = "reset_password";
@@ -51,6 +52,29 @@ class AppStrings {
   static const String contactUs = "contact_us";
   static const String inviteYourFriends = "invite_your_friends";
   static const String logout = "logout";
+  static const String invalidAmount = "invalid_amount";
+  static const String invalidCategory = "invalid_category";
+  static const String invalidDate = "invalid_date";
+  static const String amount = "amount";
+  static const String amountHint = "amount_hint";
+  static const String note = "note";
+  static const String noteHint = "note_hint";
+  static const String category = "category";
+  static const String date = "date";
+  static const String selectYear = "select_year";
+  static const String locale = "locale";
+  static const String currencySymbol = "currency_symbol";
+  static const String addNewTransaction = "add_new_transaction";
+
+  // categories
+  static const String food = "food";
+  static const String shopping = "shopping";
+  static const String transport = "transport";
+  static const String housing = "housing";
+  static const String entertainment = "entertainment";
+  static const String health = "health";
+  static const String education = "education";
+  static const String other = "other";
 
   // error handler
   static const String noContent = "no_content";
@@ -62,7 +86,7 @@ class AppStrings {
 
   static const String defaultError = "default_error";
   static const String connectTimeout = "connect_timeout";
-  static const String cancel = "cancel";
+  static const String cancelError = "cancel_error";
   static const String receiveTimeout = "receive_timeout";
   static const String sendTimeout = "send_timeout";
   static const String cacheError = "cache_error";

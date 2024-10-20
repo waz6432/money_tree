@@ -35,4 +35,12 @@ abstract class AppServiceClient {
 
   @GET("/home")
   Future<HomeResponse> getHome();
+
+  @POST("/customers/newTransaction")
+  Future<NewTransactionResponse> newTransaction({
+    @Field("amount") required int amount,
+    @Field("note") required String note,
+    @Field("category") required String category,
+    @Field("date") required String date,
+  });
 }

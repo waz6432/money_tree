@@ -23,3 +23,13 @@ class RegisterObject with _$RegisterObject {
     required String profilePicture,
   }) = _RegisterObject;
 }
+
+@freezed
+class NewTransactionObject with _$NewTransactionObject {
+  factory NewTransactionObject({
+    required int amount,
+    required String note,
+    required String category,
+    required String date,
+  }) = _NewTransaction;
+}

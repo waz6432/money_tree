@@ -528,3 +528,190 @@ abstract class _RegisterObject implements RegisterObject {
   _$$RegisterObjectImplCopyWith<_$RegisterObjectImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$NewTransactionObject {
+  int get amount => throw _privateConstructorUsedError;
+  String get note => throw _privateConstructorUsedError;
+  String get category => throw _privateConstructorUsedError;
+  String get date => throw _privateConstructorUsedError;
+
+  /// Create a copy of NewTransactionObject
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $NewTransactionObjectCopyWith<NewTransactionObject> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NewTransactionObjectCopyWith<$Res> {
+  factory $NewTransactionObjectCopyWith(NewTransactionObject value,
+          $Res Function(NewTransactionObject) then) =
+      _$NewTransactionObjectCopyWithImpl<$Res, NewTransactionObject>;
+  @useResult
+  $Res call({int amount, String note, String category, String date});
+}
+
+/// @nodoc
+class _$NewTransactionObjectCopyWithImpl<$Res,
+        $Val extends NewTransactionObject>
+    implements $NewTransactionObjectCopyWith<$Res> {
+  _$NewTransactionObjectCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of NewTransactionObject
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? amount = null,
+    Object? note = null,
+    Object? category = null,
+    Object? date = null,
+  }) {
+    return _then(_value.copyWith(
+      amount: null == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
+      note: null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as String,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$NewTransactionImplCopyWith<$Res>
+    implements $NewTransactionObjectCopyWith<$Res> {
+  factory _$$NewTransactionImplCopyWith(_$NewTransactionImpl value,
+          $Res Function(_$NewTransactionImpl) then) =
+      __$$NewTransactionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int amount, String note, String category, String date});
+}
+
+/// @nodoc
+class __$$NewTransactionImplCopyWithImpl<$Res>
+    extends _$NewTransactionObjectCopyWithImpl<$Res, _$NewTransactionImpl>
+    implements _$$NewTransactionImplCopyWith<$Res> {
+  __$$NewTransactionImplCopyWithImpl(
+      _$NewTransactionImpl _value, $Res Function(_$NewTransactionImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewTransactionObject
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? amount = null,
+    Object? note = null,
+    Object? category = null,
+    Object? date = null,
+  }) {
+    return _then(_$NewTransactionImpl(
+      amount: null == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
+      note: null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as String,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String,
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$NewTransactionImpl implements _NewTransaction {
+  _$NewTransactionImpl(
+      {required this.amount,
+      required this.note,
+      required this.category,
+      required this.date});
+
+  @override
+  final int amount;
+  @override
+  final String note;
+  @override
+  final String category;
+  @override
+  final String date;
+
+  @override
+  String toString() {
+    return 'NewTransactionObject(amount: $amount, note: $note, category: $category, date: $date)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NewTransactionImpl &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.note, note) || other.note == note) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.date, date) || other.date == date));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, amount, note, category, date);
+
+  /// Create a copy of NewTransactionObject
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NewTransactionImplCopyWith<_$NewTransactionImpl> get copyWith =>
+      __$$NewTransactionImplCopyWithImpl<_$NewTransactionImpl>(
+          this, _$identity);
+}
+
+abstract class _NewTransaction implements NewTransactionObject {
+  factory _NewTransaction(
+      {required final int amount,
+      required final String note,
+      required final String category,
+      required final String date}) = _$NewTransactionImpl;
+
+  @override
+  int get amount;
+  @override
+  String get note;
+  @override
+  String get category;
+  @override
+  String get date;
+
+  /// Create a copy of NewTransactionObject
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$NewTransactionImplCopyWith<_$NewTransactionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
