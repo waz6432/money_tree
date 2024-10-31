@@ -8,6 +8,8 @@ import 'package:financial_ledger/domain/model/model.dart';
 
 const EMPTY = "";
 const ZERO = 0;
+const EMPTY_MAP = {};
+const EMPTY_LIST = [];
 
 extension CustomerResponseMapper on CustomerResponse? {
   Customer toDomain() {
@@ -109,5 +111,83 @@ extension NesTransactionResponseMapper on NewTransactionResponse? {
       category: this?.category?.orEmpty() ?? EMPTY,
       date: this?.date.orEmpty() ?? EMPTY,
     );
+  }
+}
+
+extension TotalSpendingResponseMapper on TotalSpendingResponse? {
+  TotalSpending toDomain() {
+    return TotalSpending(
+      amount: this?.amount?.orZero() ?? ZERO,
+      spendingId: this?.spendingId?.orZero() ?? ZERO,
+      spendingDate: this?.spendingDate?.orEmpty() ?? EMPTY,
+    );
+  }
+}
+
+extension SpendingDataResponseMapper on SpendingDataResponse? {
+  SpendingData toDomain() {
+    return SpendingData(
+      spendingId: this?.spendingId?.orZero() ?? ZERO,
+      amount: this?.amount?.orZero() ?? ZERO,
+      spendingDate: this?.spendingDate?.orEmpty() ?? EMPTY,
+    );
+  }
+}
+
+extension CategoriesResponseMapper on CategoriesResponse? {
+  Categories toDomain() {
+    return Categories(
+      categoryId: this?.categoryId?.orZero() ?? ZERO,
+      categoryName: this?.categoryName?.orEmpty() ?? EMPTY,
+      spendingData: this?.spendingData?.map((spending) => spending.toDomain()).toList() ?? EMPTY_LIST.cast<SpendingData>(),
+    );
+  }
+}
+
+extension TimeDataResponseMapper on TimeDataResponse? {
+  TimeData toDomain() {
+    return TimeData(
+      netWorthId: this?.netWorthId?.orZero() ?? ZERO,
+      amount: this?.amount?.orZero() ?? ZERO,
+      date: this?.date?.orEmpty() ?? EMPTY,
+    );
+  }
+}
+
+extension NetWorthResponseMapper on NetWorthResponse? {
+  NetWorth toDomain() {
+    return NetWorth(
+      timeData: this?.timeData?.map((time) => time.toDomain()).toList() ?? EMPTY_LIST.cast<TimeData>(),
+    );
+  }
+}
+
+extension ReportResponseMapper on ReportResponse? {
+  ReportObject toDomain() {
+    List<TotalSpending> mappedTotalSpending = (this?.data?.totalSpendings?.map(
+                  (totalSpending) => totalSpending.toDomain(),
+                ) ??
+            const Iterable.empty())
+        .cast<TotalSpending>()
+        .toList();
+
+    List<Categories> mappedCategories = (this?.data?.categories?.map(
+                  (category) => category.toDomain(),
+                ) ??
+            const Iterable.empty())
+        .toList();
+
+    NetWorth mappedNetWorth = (this?.data?.netWorth?.toDomain() ??
+        NetWorth(
+          timeData: (this?.data?.netWorth?.timeData.orEmptyList() ?? EMPTY_LIST).cast<TimeData>(),
+        ));
+
+    var data = ReportData(
+      totalSpendings: mappedTotalSpending,
+      categories: mappedCategories,
+      netWorth: mappedNetWorth,
+    );
+
+    return ReportObject(data: data);
   }
 }

@@ -46,16 +46,17 @@ ThemeData getApplicationTheme() {
 
     textTheme: TextTheme(
       displayLarge: getSemiBoldStyle(color: ColorManager.darkGrey, fontSize: FontSize.s16), // headline1
-      displayMedium: getRegularStyle(color: ColorManager.white, fontSize: FontSize.s16), // headline2
+      displayMedium: getRegularStyle(color: ColorManager.black, fontSize: FontSize.s16), // headline2
       displaySmall: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s16), // headline3
       headlineLarge: getSemiBoldStyle(color: ColorManager.black, fontSize: FontSize.s16), // headline3
       headlineMedium: getRegularStyle(color: ColorManager.primary, fontSize: FontSize.s16), // headline4
+      headlineSmall: getSemiBoldStyle(color: ColorManager.white, fontSize: FontSize.s16), // headline5
       titleLarge: getSemiBoldStyle(color: ColorManager.grey, fontSize: FontSize.s20), // subtitle2
       titleMedium: getMediumStyle(color: ColorManager.lightGrey, fontSize: FontSize.s14), // subtitle1
       titleSmall: getMediumStyle(color: ColorManager.primary, fontSize: FontSize.s14), // subtitle2
       bodyLarge: getRegularStyle(color: ColorManager.black), // bodyText1
       bodySmall: getRegularStyle(color: ColorManager.grey), // caption
-      bodyMedium: getMediumStyle(color: ColorManager.lightGrey), // bodyText2
+      bodyMedium: getSemiBoldStyle(color: ColorManager.green, fontSize: FontSize.s14), // bodyText2
     ),
 
     inputDecorationTheme: InputDecorationTheme(

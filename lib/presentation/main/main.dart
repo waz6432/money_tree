@@ -1,8 +1,9 @@
 import 'package:financial_ledger/presentation/main/home/home_page.dart';
-import 'package:financial_ledger/presentation/main/report_page.dart';
+import 'package:financial_ledger/presentation/main/report/report_page.dart';
 import 'package:financial_ledger/presentation/main/settings_page.dart';
 import 'package:financial_ledger/presentation/main/transaction/new_transaction_page.dart';
 import 'package:financial_ledger/presentation/resources/color_manager.dart';
+import 'package:financial_ledger/presentation/resources/font_manager.dart';
 import 'package:financial_ledger/presentation/resources/strings_manager.dart';
 import 'package:financial_ledger/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
@@ -18,15 +19,15 @@ class MainView extends StatefulWidget {
 class _MainViewState extends State<MainView> {
   List<Widget> pages = const <Widget>[
     HomePage(),
-    ReportPage(),
     NewTransactionPage(),
+    ReportPage(),
     SettingsPage(),
   ];
 
   List<String> titles = const <String>[
     AppStrings.home,
-    AppStrings.report,
     AppStrings.transaction,
+    AppStrings.report,
     AppStrings.settings,
   ];
 
@@ -40,7 +41,10 @@ class _MainViewState extends State<MainView> {
         toolbarHeight: AppSize.s40,
         title: Text(
           _title,
-          style: Theme.of(context).textTheme.displayMedium,
+          style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                fontSize: FontSize.s20,
+                color: ColorManager.white,
+              ),
         ).tr(),
       ),
       body: pages[_currentIndex],
@@ -55,8 +59,8 @@ class _MainViewState extends State<MainView> {
           onTap: onTap,
           items: [
             BottomNavigationBarItem(icon: const Icon(Icons.home), label: AppStrings.home.tr()),
-            BottomNavigationBarItem(icon: const Icon(Icons.area_chart_outlined), label: AppStrings.report.tr()),
             BottomNavigationBarItem(icon: const Icon(Icons.credit_card), label: AppStrings.transaction.tr()),
+            BottomNavigationBarItem(icon: const Icon(Icons.area_chart_outlined), label: AppStrings.report.tr()),
             BottomNavigationBarItem(icon: const Icon(Icons.settings), label: AppStrings.settings.tr()),
           ],
         ),

@@ -65,6 +65,10 @@ class AppStrings {
   static const String locale = "locale";
   static const String currencySymbol = "currency_symbol";
   static const String addNewTransaction = "add_new_transaction";
+  static const String reportYourSpending = "report_your_spending";
+  static const String reportCategories = "report_categories";
+  static const String reportNetWorth = "report_net_worth";
+  static const String last30Days = "last_30_days";
 
   // categories
   static const String food = "food";

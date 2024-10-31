@@ -43,4 +43,7 @@ abstract class AppServiceClient {
     @Field("category") required String category,
     @Field("date") required String date,
   });
+
+  @GET("/customers/report")
+  Future<ReportResponse> getReport();
 }

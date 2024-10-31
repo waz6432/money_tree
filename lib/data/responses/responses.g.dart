@@ -190,3 +190,114 @@ Map<String, dynamic> _$NewTransactionResponseToJson(
       'category': instance.category,
       'date': instance.date,
     };
+
+TotalSpendingResponse _$TotalSpendingResponseFromJson(
+        Map<String, dynamic> json) =>
+    TotalSpendingResponse(
+      spendingId: (json['spendingId'] as num?)?.toInt(),
+      spendingDate: json['spendingDate'] as String?,
+      amount: (json['amount'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$TotalSpendingResponseToJson(
+        TotalSpendingResponse instance) =>
+    <String, dynamic>{
+      'spendingId': instance.spendingId,
+      'spendingDate': instance.spendingDate,
+      'amount': instance.amount,
+    };
+
+SpendingDataResponse _$SpendingDataResponseFromJson(
+        Map<String, dynamic> json) =>
+    SpendingDataResponse(
+      spendingId: (json['spendingId'] as num?)?.toInt(),
+      spendingDate: json['spendingDate'] as String?,
+      amount: (json['amount'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$SpendingDataResponseToJson(
+        SpendingDataResponse instance) =>
+    <String, dynamic>{
+      'spendingId': instance.spendingId,
+      'spendingDate': instance.spendingDate,
+      'amount': instance.amount,
+    };
+
+CategoriesResponse _$CategoriesResponseFromJson(Map<String, dynamic> json) =>
+    CategoriesResponse(
+      categoryId: (json['categoryId'] as num?)?.toInt(),
+      categoryName: json['categoryName'] as String?,
+      spendingData: (json['spendingData'] as List<dynamic>?)
+          ?.map((e) => SpendingDataResponse.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$CategoriesResponseToJson(CategoriesResponse instance) =>
+    <String, dynamic>{
+      'categoryId': instance.categoryId,
+      'categoryName': instance.categoryName,
+      'spendingData': instance.spendingData,
+    };
+
+TimeDataResponse _$TimeDataResponseFromJson(Map<String, dynamic> json) =>
+    TimeDataResponse(
+      netWorthId: (json['netWorthId'] as num?)?.toInt(),
+      date: json['date'] as String?,
+      amount: (json['amount'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$TimeDataResponseToJson(TimeDataResponse instance) =>
+    <String, dynamic>{
+      'netWorthId': instance.netWorthId,
+      'date': instance.date,
+      'amount': instance.amount,
+    };
+
+NetWorthResponse _$NetWorthResponseFromJson(Map<String, dynamic> json) =>
+    NetWorthResponse(
+      timeData: (json['timeData'] as List<dynamic>?)
+          ?.map((e) => TimeDataResponse.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$NetWorthResponseToJson(NetWorthResponse instance) =>
+    <String, dynamic>{
+      'timeData': instance.timeData,
+    };
+
+ReportDataResponse _$ReportDataResponseFromJson(Map<String, dynamic> json) =>
+    ReportDataResponse(
+      totalSpendings: (json['totalSpending'] as List<dynamic>?)
+          ?.map(
+              (e) => TotalSpendingResponse.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      categories: (json['categories'] as List<dynamic>?)
+          ?.map((e) => CategoriesResponse.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      netWorth: json['netWorth'] == null
+          ? null
+          : NetWorthResponse.fromJson(json['netWorth'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$ReportDataResponseToJson(ReportDataResponse instance) =>
+    <String, dynamic>{
+      'totalSpending': instance.totalSpendings,
+      'categories': instance.categories,
+      'netWorth': instance.netWorth,
+    };
+
+ReportResponse _$ReportResponseFromJson(Map<String, dynamic> json) =>
+    ReportResponse(
+      data: json['data'] == null
+          ? null
+          : ReportDataResponse.fromJson(json['data'] as Map<String, dynamic>),
+    )
+      ..status = (json['status'] as num?)?.toInt()
+      ..message = json['message'] as String?;
+
+Map<String, dynamic> _$ReportResponseToJson(ReportResponse instance) =>
+    <String, dynamic>{
+      'status': instance.status,
+      'message': instance.message,
+      'data': instance.data,
+    };

@@ -146,4 +146,37 @@ class RepositoryImpl extends Repository {
       return Left(DataSource.NO_INTERNET_CONNECTION.getFailure());
     }
   }
+
+  @override
+  Future<Either<Failure, ReportObject>> getReport() async {
+    try {
+      // 캐시 데이터
+      final response = await _localDataSource.getReport();
+      return Right(response.toDomain());
+    } catch (cacheError) {
+      // 캐시 에러 (get API 데이터)
+      if (await _networkInfo.isConnected) {
+        try {
+          final response = await _remoteDataSource.getReport();
+
+          if (response.status == ApiInternalStatus.SUCCESS) {
+            // return data (success)
+            // save reponse local data
+            _localDataSource.saveReportToCache(reportResponse: response);
+            return Right(response.toDomain());
+          } else {
+            return Left(Failure(
+              code: response.status ?? ApiInternalStatus.FAILURE,
+              message: response.message ?? ResponseMessage.DEFAULT_ERROR,
+            ));
+          }
+        } catch (exception) {
+          return Left(ErrorHandler.handle(exception).failure);
+        }
+      } else {
+        // connection error
+        return Left(DataSource.NO_INTERNET_CONNECTION.getFailure());
+      }
+    }
+  }
 }

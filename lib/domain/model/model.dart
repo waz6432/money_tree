@@ -92,3 +92,77 @@ class NewTransaction {
     required this.date,
   });
 }
+
+class TotalSpending {
+  int spendingId;
+  String spendingDate;
+  int amount;
+
+  TotalSpending({
+    required this.spendingId,
+    required this.spendingDate,
+    required this.amount,
+  });
+}
+
+class SpendingData {
+  int spendingId;
+  String spendingDate;
+  int amount;
+
+  SpendingData({
+    required this.spendingId,
+    required this.spendingDate,
+    required this.amount,
+  });
+}
+
+class Categories {
+  int categoryId;
+  String categoryName;
+  List<SpendingData> spendingData;
+
+  Categories({
+    required this.categoryId,
+    required this.categoryName,
+    required this.spendingData,
+  });
+}
+
+class TimeData {
+  int netWorthId;
+  String date;
+  int amount;
+
+  TimeData({
+    required this.netWorthId,
+    required this.date,
+    required this.amount,
+  });
+}
+
+class NetWorth {
+  List<TimeData> timeData;
+
+  NetWorth({
+    required this.timeData,
+  });
+}
+
+class ReportData {
+  List<TotalSpending> totalSpendings;
+  List<Categories> categories;
+  NetWorth netWorth;
+
+  ReportData({
+    required this.totalSpendings,
+    required this.categories,
+    required this.netWorth,
+  });
+}
+
+class ReportObject {
+  ReportData data;
+
+  ReportObject({required this.data});
+}

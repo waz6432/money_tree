@@ -204,3 +204,131 @@ class NewTransactionResponse extends BaseResponse {
   // to json
   Map<String, dynamic> toJson() => _$NewTransactionResponseToJson(this);
 }
+
+@JsonSerializable()
+class TotalSpendingResponse {
+  @JsonKey(name: "spendingId")
+  int? spendingId;
+
+  @JsonKey(name: "spendingDate")
+  String? spendingDate;
+
+  @JsonKey(name: "amount")
+  int? amount;
+
+  TotalSpendingResponse({this.spendingId, this.spendingDate, this.amount});
+
+  // from json
+  factory TotalSpendingResponse.fromJson(Map<String, dynamic> json) => _$TotalSpendingResponseFromJson(json);
+
+  // to json
+  Map<String, dynamic> toJson() => _$TotalSpendingResponseToJson(this);
+}
+
+@JsonSerializable()
+class SpendingDataResponse {
+  @JsonKey(name: "spendingId")
+  int? spendingId;
+
+  @JsonKey(name: "spendingDate")
+  String? spendingDate;
+
+  @JsonKey(name: "amount")
+  int? amount;
+
+  SpendingDataResponse({this.spendingId, this.spendingDate, this.amount});
+
+  // from json
+  factory SpendingDataResponse.fromJson(Map<String, dynamic> json) => _$SpendingDataResponseFromJson(json);
+
+  // to json
+  Map<String, dynamic> toJson() => _$SpendingDataResponseToJson(this);
+}
+
+@JsonSerializable()
+class CategoriesResponse {
+  @JsonKey(name: "categoryId")
+  int? categoryId;
+
+  @JsonKey(name: "categoryName")
+  String? categoryName;
+
+  @JsonKey(name: "spendingData")
+  List<SpendingDataResponse>? spendingData;
+
+  CategoriesResponse({this.categoryId, this.categoryName, this.spendingData});
+
+  // from json
+  factory CategoriesResponse.fromJson(Map<String, dynamic> json) => _$CategoriesResponseFromJson(json);
+
+  // to json
+  Map<String, dynamic> toJson() => _$CategoriesResponseToJson(this);
+}
+
+@JsonSerializable()
+class TimeDataResponse {
+  @JsonKey(name: "netWorthId")
+  int? netWorthId;
+
+  @JsonKey(name: "date")
+  String? date;
+
+  @JsonKey(name: "amount")
+  int? amount;
+
+  TimeDataResponse({this.netWorthId, this.date, this.amount});
+
+  // from json
+  factory TimeDataResponse.fromJson(Map<String, dynamic> json) => _$TimeDataResponseFromJson(json);
+
+  // to json
+  Map<String, dynamic> toJson() => _$TimeDataResponseToJson(this);
+}
+
+@JsonSerializable()
+class NetWorthResponse {
+  @JsonKey(name: "timeData")
+  List<TimeDataResponse>? timeData;
+
+  NetWorthResponse({this.timeData});
+
+  // from json
+  factory NetWorthResponse.fromJson(Map<String, dynamic> json) => _$NetWorthResponseFromJson(json);
+
+  // to json
+  Map<String, dynamic> toJson() => _$NetWorthResponseToJson(this);
+}
+
+@JsonSerializable()
+class ReportDataResponse {
+  @JsonKey(name: "totalSpending")
+  List<TotalSpendingResponse>? totalSpendings;
+
+  @JsonKey(name: "categories")
+  List<CategoriesResponse>? categories;
+
+  @JsonKey(name: "netWorth")
+  NetWorthResponse? netWorth;
+
+  ReportDataResponse({this.totalSpendings, this.categories, this.netWorth});
+
+  // from json
+  factory ReportDataResponse.fromJson(Map<String, dynamic> json) => _$ReportDataResponseFromJson(json);
+
+  // to json
+  Map<String, dynamic> toJson() => _$ReportDataResponseToJson(this);
+}
+
+@JsonSerializable()
+class ReportResponse extends BaseResponse {
+  @JsonKey(name: "data")
+  ReportDataResponse? data;
+
+  ReportResponse({this.data});
+
+  // from json
+  factory ReportResponse.fromJson(Map<String, dynamic> json) => _$ReportResponseFromJson(json);
+
+  // to json
+  Map<String, dynamic> toJson() => _$ReportResponseToJson(this);
+}

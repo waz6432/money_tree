@@ -11,9 +11,11 @@ import 'package:financial_ledger/domain/usecase/home_use_case.dart';
 import 'package:financial_ledger/domain/usecase/login_use_case.dart';
 import 'package:financial_ledger/domain/usecase/new_transaction_use_case.dart';
 import 'package:financial_ledger/domain/usecase/register_use_case.dart';
+import 'package:financial_ledger/domain/usecase/report_use_case.dart';
 import 'package:financial_ledger/presentation/forgot_password/forgot_password_view_model.dart';
 import 'package:financial_ledger/presentation/login/login_view_model.dart';
 import 'package:financial_ledger/presentation/main/home/home_view_model.dart';
+import 'package:financial_ledger/presentation/main/report/report_view_model.dart';
 import 'package:financial_ledger/presentation/main/transaction/new_transaction_view_model.dart';
 import 'package:financial_ledger/presentation/register/register_view_model.dart';
 import 'package:get_it/get_it.dart';
@@ -88,6 +90,13 @@ initNewTransactionModule() {
   }
 }
 
+initReportModule() {
+  if (!GetIt.I.isRegistered<ReportUseCase>()) {
+    instance.registerFactory<ReportUseCase>(() => ReportUseCase(instance()));
+    instance.registerFactory<ReportViewModel>(() => ReportViewModel(instance()));
+  }
+}
+
 resetAllModules() {
   instance.reset(dispose: false);
   initAppModule();
@@ -95,5 +104,6 @@ resetAllModules() {
   initForgotPasswordModule();
   initRegisterModule();
   initHomeModule();
+  initReportModule();
   initNewTransactionModule();
 }

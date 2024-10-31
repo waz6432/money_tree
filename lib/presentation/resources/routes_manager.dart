@@ -37,6 +37,7 @@ class RouteGenerator {
       case Routes.mainRoute:
         initHomeModule();
         initNewTransactionModule();
+        initReportModule();
         return MaterialPageRoute(builder: (context) => const MainView());
       default:
         return undefinedRoute();
