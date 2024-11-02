@@ -13,9 +13,28 @@
 #### `Front-end`
   - Flutter
 
+#### `Back-end`
+  - Mock API
+
 <br>
 
 ## 3. ERD 설계
+
+
+<br>
+
+
+## [API 명세](https://www.notion.so/API-1290ca3231cc8099a5a3c89e15353361) 
+⬆️ 제목(Notion 링크) 클릭해서 자세히보기
+
+| Domain      | URL                                                                        | Http Method                 | description       | 접근 권한 |
+|:------------|:---------------------------------------------------------------------------|:----------------------------|:------------------|:------|
+| **Auth**    | /customers/login                                                           | `POST`                      | 사용자 로그인      | -     |
+|             | /customers/register                                                        | `POST`                      | 사용자 회원가입    | -     |
+|             | /customers/forgotPassword                                                  | `POST`                      | 사용자 패스워드 찾기       | -     |
+| **Main**    | /home                                                                      | `GET`                       | 메인화면           | -     |
+|             | /customers/report                                                          | `GET`                       | 리포트 출력 화면      | -     |
+|             | /customers/newTransaction                                                  | `POST`                       | 지출금 등록 화면      | -     |
 
 
 <br>
