@@ -212,15 +212,15 @@ class RegisterViewModel extends BaseViewModel implements RegisterViewModelInputs
 
   // private functions
   bool _isUserNameValid(String userName) {
-    return userName.length >= 8;
+    return userName.isNotEmpty;
   }
 
   bool _isMobileNumberValid(String mobileNumber) {
-    return mobileNumber.length >= 10;
+    return mobileNumber.isNotEmpty;
   }
 
   bool _isPasswordValid(String password) {
-    return password.length >= 8;
+    return password.isNotEmpty;
   }
 
   bool _validateAllInputs() {
