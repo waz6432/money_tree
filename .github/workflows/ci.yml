@@ -1,0 +1,49 @@
+name: Money Tree APK
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 코드 체크아웃
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # 2. Java 설치 (Gradle 빌드를 위해 필요)
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+      
+      # 3. Flutter 환경 설정
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.2'  # 로컬 버전 설정
+
+      # 4. Flutter 버전 확인 (디버깅과 일관성 확보를 위해 추가)
+      - name: Check Flutter Version
+        run: flutter --version
+
+      # 5. 의존성 설치
+      - name: Install dependencies
+        run: flutter pub get
+
+      # 6. APK 빌드
+      - name: Build APK
+        run: flutter build apk --release
+
+      # 7. APK 파일 업로드
+      - name: Upload APK to GitHub Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}                    # GitHub API 접근을 위한 인증 토큰
+          tag: v0.0.${{ github.run_number }}                      # 릴리스에 사용할 고유한 버전 태그
+          release_name: "Release v0.0.${{ github.run_number }}"   # GitHub Releases에 표시될 릴리스 이름
+          assets: "build/app/outputs/apk/release/app-release.apk"
