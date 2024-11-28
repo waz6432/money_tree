@@ -24,7 +24,7 @@
 <br>
 
 
-## [API 명세](https://www.notion.so/API-1290ca3231cc8099a5a3c89e15353361) 
+## [API 명세]([https://www.notion.so/API-1290ca3231cc8099a5a3c89e15353361](https://flying-condor-6be.notion.site/API-1290ca3231cc8099a5a3c89e15353361)) 
 ⬆️ 제목(Notion 링크) 클릭해서 자세히보기
 
 | Domain      | URL                                                                        | Http Method                 | description       | 접근 권한 |
